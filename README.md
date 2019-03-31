@@ -1,6 +1,6 @@
 # basic-vuex-example
 
-> Basic vuex example
+> ![](src/assets/basicvuexexercise.gif)
 
 ## Build Setup
 
