@@ -5,9 +5,9 @@
       <input type="text" v-model="name">
       <input type="text" v-model="title">
       <input type="button" @click="updateInfo" value="Update User Info">
-      <input type="button" @click="showUpdatePanel" value="Close">
+      <input type="button" @click="changeShowState" value="Close">
     </div>
-    <p v-else @click="showUpdatePanel"> Click to change user information </p>
+    <p v-else @click="changeShowState"> Click to change user information </p>
   </div>
 </template>
 
@@ -29,10 +29,6 @@ export default {
     this.title = this.$store.state.title;
   },
   computed: {
-    ...mapState([
-      'username',
-      'userTitle'
-    ]),
     ...mapGetters([
       'welcome'
     ])
@@ -44,7 +40,7 @@ export default {
     updateInfo() {
       this.updateUserInfo({ name: this.name, title: this.title});
     },
-    showUpdatePanel() {
+    changeShowState() {
       this.show = !this.show;
     }
   }
